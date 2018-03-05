@@ -1,0 +1,56 @@
+body{
+	color: maroon;
+}
+h2{
+	text-align: center;
+	background-color: DarkCyan ;
+	height: 6vh;
+	padding-top: 2vh;
+}
+.title{
+	text-align: center;
+}
+.linea{
+	margin-top:1%;
+	width: 100%;
+	border: 1.5px solid DarkCyan;
+}
+.error{
+	color:red;
+	text-align: center;
+	font-weight: bold;
+}
+/* Menu superior */
+.menu1{
+	float: right;
+	margin-top: -2vh;
+}
+.menu1 tr td{
+	padding-right: 10px;
+}
+/* Fin menu superior */
+
+/* Personal information*/
+.personal-info{
+	border: 5px double gray;
+}
+.personal-info div{
+	margin-left: 1vh;
+}
+/* Fin personal information*/
+
+/* Tablas */
+.tabla1, .tabla2{
+	width: 100%;
+	text-align: center;
+}
+.tabla1 tr th{
+	background-color: #66CC99;
+}
+
+.tabla2 tr th{
+	background-color: #669966;
+}
+
+
+/* Fin tablas*/

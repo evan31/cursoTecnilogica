@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+	<!-- Activacion anotaciones -->
+	<context:annotation-config/>
+	<context:component-scan base-package="es.tecnilogica.ejemplos"/>
+	<!-- Fin Activacion anotaciones -->
+
+	<!-- Beans -->
+		<!-- Eventos -->
+	<bean id="event1" class="es.tecnilogica.ejemplos.spring.entities.Event" >
+		<property name="eventid" value="1" />
+		<property name="name" value="event 1" />
+		<property name="description" value="description1" />
+		<property name="place" value="place 1" />
+		<property name="duration" value="duration 1" />
+		<property name="eventType" value="type 1" />
+		<property name="seatsAvailable" value="10" />
+	</bean>
+	<bean id="event2" class="es.tecnilogica.ejemplos.spring.entities.Event" >
+		<property name="eventid" value="2" />
+		<property name="name" value="event 2" />
+		<property name="description" value="description2" />
+		<property name="place" value="place 2" />
+		<property name="duration" value="duration 2" />
+		<property name="eventType" value="type 2" />
+		<property name="seatsAvailable" value="20" />
+	</bean>
+		<!-- Fin Eventos -->
+	<!-- Fin Beans -->
+</beans>

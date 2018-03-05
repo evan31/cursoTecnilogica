@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Beans -->
+		<!-- Eventos -->
+	<bean id="event1" class="es.tecnilogica.ejemplos.spring.entities.Event" >
+		<property name="eventid" value="1" />
+		<property name="name" value="event 1" />
+		<property name="description" value="description1" />
+		<property name="place" value="place 1" />
+		<property name="duration" value="duration 1" />
+		<property name="eventType" value="type 1" />
+		<property name="seatsAvailable" value="10" />
+	</bean>
+	<bean id="event2" class="es.tecnilogica.ejemplos.spring.entities.Event" >
+		<property name="eventid" value="2" />
+		<property name="name" value="event 2" />
+		<property name="description" value="description2" />
+		<property name="place" value="place 2" />
+		<property name="duration" value="duration 2" />
+		<property name="eventType" value="type 2" />
+		<property name="seatsAvailable" value="20" />
+	</bean>
+		<!-- Fin Eventos -->
+		<!-- DAO -->
+	<bean id="eventDAO" class="es.tecnilogica.ejemplos.spring.daos.EventDAO">
+		<property name="events">
+			<list>
+				<ref bean="event1" />
+				<ref bean="event2" />
+			</list>
+		</property>
+	</bean>
+		<!-- Fin DAO -->
+		<!-- Services -->
+	<bean id="eventService" class="es.tecnilogica.ejemplos.spring.services.EventServiceImpl">
+		<property name="eventDAO">
+			<ref bean="eventDAO" />
+		</property>
+	</bean>
+		<!-- Fin Services -->
+	<!-- Fin Beans -->
+
+</beans>

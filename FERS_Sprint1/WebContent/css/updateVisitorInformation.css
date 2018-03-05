@@ -1,0 +1,47 @@
+body{
+	color: maroon;
+}
+h2{
+	text-align: center;
+	background-color: DarkCyan ;
+	height: 6vh;
+	padding-top: 2vh;
+}
+.error{
+	color:red;
+}
+/* Menu superior */
+.menu1{
+	float: right;
+	margin-top: -2vh;
+}
+.menu1 tr td{
+	padding-right: 10px;
+}
+/* Fin menu superior */
+
+/* Formulario principal */
+.title{
+	font-size: 1.5em;
+	text-align: center;
+}
+.tip{
+	float:right;
+}
+.main-form-update{
+	text-align: center;
+}
+.tabla-update{
+	margin-left: 35.5vh;
+	width: 40%;
+}
+.tabla-update tr td{
+	font-size: 1.1em;
+}
+.info-field{
+	text-align: right;
+}
+.input-field{
+	text-align: left;
+}
+/* Fin formulario principal */

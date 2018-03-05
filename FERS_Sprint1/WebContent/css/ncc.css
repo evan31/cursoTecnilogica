@@ -1,0 +1,98 @@
+.error{
+	color:red;
+}
+/* Fondos */
+.fondo{
+	background-image: url("../images/codington.png");
+}
+.fondo-menu{
+	background-image: url("../images/greenhorizontalline.jpg");
+}
+/* Fin fondos*/
+.cabecera-info{
+	text-align: center;
+}
+/* Menu horizontal */
+#menu {
+ float:left;
+ list-style-type:none;
+ width: 96%;
+ text-align: center;
+ border-radius: 5px;
+ background-color: #a4d98d;
+ height: 25px;
+ padding-top: 0.5%;
+ margin-top: -1.5%;
+}
+#menu li {
+ display: inline;
+ margin-left: 3%;
+}
+#menu li a {
+	text-decoration: none;
+}
+#menu li a:link {
+    color: purple;
+}
+/* Fin menu horizontal */
+
+/* Texto */
+.texto-lateral{
+	background-color: orange;
+	width: 10%;
+	border-radius: 5px;
+	text-align: center;
+	float: left;
+	margin-top: -1.6%;
+}
+.texto-central{
+	width: 80%;
+	text-align: center;
+	float: left;
+	margin-top: -0.5%;
+	margin-left: 7vh;
+	font-style: italic;
+	font-size: 1.5em;
+}
+/* Fin texto */
+
+/* Zona principal */
+.main-content{
+	width: 80%;
+	text-align: center;
+	float: left;
+	margin-top: -0.5%;
+	margin-left: 7vh;
+	font-style: italic;
+}
+/* Fin Zona principal*/
+
+/* Imagenes */
+.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+.container {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.images-text{
+	float:left;
+	margin-left: 10vh;
+}
+
+/* Fin Imagenes */
+
+/* Pie */
+footer{
+	clear: both;
+    position: absolute;
+    bottom: 0;
+    background-color: red;
+    margin-left: 60vh;
+}
+/* Fin pie */

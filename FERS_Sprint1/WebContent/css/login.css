@@ -1,0 +1,39 @@
+body{
+	color: maroon;
+}
+h2{
+	text-align: center;
+	background-color: DarkCyan ;
+	height: 6vh;
+	padding-top: 2vh;
+}
+.error{
+	color:red;
+}
+/* Formulario principal */
+.main-form-login{
+	text-align: center;
+}
+.tabla-login{
+	margin: auto;
+	width: 40%;
+}
+.tabla-login caption{
+	font-size: 1.5em;
+}
+.tabla-login tr td{
+	font-size: 1.1em;
+}
+.info-field{
+	text-align: right;
+}
+.input-field{
+	text-align: left;
+}
+/* Fin formulario principal */
+
+/* Enlace a registro */
+.register-link{
+	margin-left: 55vh;
+}
+/* Fin enlace a registro*/

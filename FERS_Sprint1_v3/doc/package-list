@@ -1,0 +1,6 @@
+com.accenture.fers.config
+com.accenture.fers.dao
+com.accenture.fers.entity
+com.accenture.fers.exceptions
+com.accenture.fers.service
+com.accenture.fers.utils
