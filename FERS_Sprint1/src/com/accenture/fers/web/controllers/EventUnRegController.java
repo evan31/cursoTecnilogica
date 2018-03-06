@@ -51,6 +51,7 @@ public class EventUnRegController implements IController {
         // Eliminamos el evento del usuario
         try{
         	visitorService.unregisterVisitorToEvent(visitor, id);
+        	visitor = visitorService.searchUser(visitor);
         }catch(FERSGenericException fers){
         }
 

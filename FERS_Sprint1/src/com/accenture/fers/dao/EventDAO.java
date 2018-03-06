@@ -15,7 +15,7 @@ import com.accenture.fers.entity.Event;
 *
 * @version 1.0
 */
-@Repository("eventDAO")
+//@Repository("eventDAO")
 public class EventDAO implements IEventDAO{
 
 	@Autowired

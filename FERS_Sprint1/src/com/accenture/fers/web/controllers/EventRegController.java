@@ -50,6 +50,7 @@ public class EventRegController implements IController {
         // Añadimos el evento al visitor
         try{
         	visitorService.registerVisitorToEvent(visitor, id);
+        	visitor = visitorService.searchUser(visitor);
         }catch(FERSGenericException fers){
         	request.setAttribute("errorAddEvent", fers.getMessage());
         }

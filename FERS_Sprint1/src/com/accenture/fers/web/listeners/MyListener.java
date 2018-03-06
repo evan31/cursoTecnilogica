@@ -47,7 +47,7 @@ public class MyListener implements ServletContextListener {
      */
     public void contextInitialized(ServletContextEvent servlet)  {
     	ApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(servlet.getServletContext());
-    	EventFacade service = (EventService)applicationContext.getBean("eventService");
+    	EventFacade service = (EventFacade)applicationContext.getBean("eventService");
     	servlet.getServletContext().setAttribute("eventos", service.getAllEvents());
     }
 

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import es.tecnilogica.ejemplos.spring.entities.Event;
 
-@Repository("eventDAO")
+//@Repository("eventDAO")
 public class EventDAO implements IEventDAO {
 
 	@Autowired

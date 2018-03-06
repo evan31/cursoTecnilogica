@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.accenture.fers.entity.Visitor;
 import com.accenture.fers.exceptions.FERSGenericException;
-import com.accenture.fers.service.VisitorService;
+import com.accenture.fers.service.VisitorFacade;
 
 /**
 *
@@ -27,7 +27,7 @@ import com.accenture.fers.service.VisitorService;
 @SessionAttributes("usuario")
 public class UpdateVisitorPasswordController implements IController {
 	@Autowired
-	VisitorService visitorService;
+	VisitorFacade visitorService;
 	/**
 	 * Mantiene en updateVisitorPassword.jsp si hay error
 	 * Manda a index.jsp y actualiza sesion si todo es correcto

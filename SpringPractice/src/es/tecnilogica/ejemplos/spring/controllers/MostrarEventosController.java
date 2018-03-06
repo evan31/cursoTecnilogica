@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,7 @@ import es.tecnilogica.ejemplos.spring.services.EventServiceImpl;
 @Controller
 @SessionAttributes("eventos")
 public class MostrarEventosController {
+	@Autowired
 	private EventFacade eventService;
 
 	@RequestMapping(value="/mostrarEvents.do")
@@ -27,8 +29,6 @@ public class MostrarEventosController {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationConfig.xml");
 		// Creamos instancia ModelAndView
 		ModelAndView modelAndView = new ModelAndView("/WEB-INF/VisualizaEventos.jsp");
-		// Obtenemos los eventos
-		EventFacade eventService = (EventServiceImpl)context.getBean("eventServiceImpl");
 		List<Event> eventos = eventService.getAllEvents();
 		// Guardamos los eventos en modelAndView
 		modelAndView.addObject("eventos", eventos);

@@ -2,8 +2,11 @@ package com.accenture.fers.service;
 
 import java.util.Set;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.accenture.fers.dao.IEventDAO;
 import com.accenture.fers.dao.IVisitorDAO;
@@ -19,6 +22,7 @@ import com.accenture.fers.exceptions.FERSGenericException;
  *
  * @version 1.0
  */
+@EnableTransactionManagement
 @Service("visitorService")
 public class VisitorService implements VisitorFacade {
 	@Autowired
@@ -34,6 +38,7 @@ public class VisitorService implements VisitorFacade {
 	 * @return boolean that informs if operation was succeed
 	 */
 	@Override
+	@Transactional
 	public boolean createVisitor(Visitor visitor) {
 		boolean flag = false;
 		// if there is not a visitor with the same username
@@ -53,6 +58,7 @@ public class VisitorService implements VisitorFacade {
 	 * @return visitor found
 	 */
 	@Override
+	@Transactional
 	public Visitor searchUser(Visitor visitor) {
 		// Search visitor by username
 		Visitor visitorFound = visitorDAO.searchUser(visitor);
@@ -78,6 +84,7 @@ public class VisitorService implements VisitorFacade {
 	 * @param eventid of the event to register
 	 */
 	@Override
+	@Transactional
 	public void registerVisitorToEvent(Visitor visitor, int eventid) {
 		// Get event by id
 		Event event = eventDAO.getEvent(eventid);
@@ -123,6 +130,7 @@ public class VisitorService implements VisitorFacade {
 	 * @return a list of events
 	 */
 	@Override
+	@Transactional
 	public Set<Event> showRegisteredEvents(Visitor visitor) {
 		// return registered events
 		return visitor.getRegisteredEvents();
@@ -136,6 +144,7 @@ public class VisitorService implements VisitorFacade {
 	 * @throws FERSGenericException
 	 */
 	@Override
+	@Transactional
 	public int updateVisitorDetails(Visitor visitor) {
 		// update visitor details
 		return visitorDAO.updateVisitor(visitor);
@@ -148,6 +157,7 @@ public class VisitorService implements VisitorFacade {
 	 * @return 1 if the visitor was updated/0 otherwise
 	 */
 	@Override
+	@Transactional
 	public int changePassword(Visitor visitor) {
 		// update password
 		return visitorDAO.updateVisitor(visitor);
@@ -161,6 +171,7 @@ public class VisitorService implements VisitorFacade {
 	 * @param eventid of the event that is going to be unregistered
 	 */
 	@Override
+	@Transactional
 	public void unregisterVisitorToEvent(Visitor visitor, int eventid) {
 		// get event by id
 		Event event = eventDAO.getEvent(eventid);
@@ -181,6 +192,7 @@ public class VisitorService implements VisitorFacade {
 	 * @return visitor found
 	 */
 	@Override
+	@Transactional
 	public boolean searchUserName(String userName) {
 		boolean success = false;
 		Visitor visitor = new Visitor();

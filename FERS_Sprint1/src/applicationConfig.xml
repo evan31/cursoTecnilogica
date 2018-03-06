@@ -2,17 +2,50 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
 
-	<!-- Activa cion anotaciones -->
+	<!-- Activacion anotaciones -->
 	<context:annotation-config/>
 	<context:component-scan base-package="com.accenture.fers"/>
+	<tx:annotation-driven transaction-manager="transactionManager" />
 	<!-- Fin Activacion anotaciones -->
+
+<bean
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+		id="entityManagerFactory">
+		<property ref="dataSource" name="dataSource" />
+		<property name="persistenceUnitName" value="CodingtonJPA" />
+		<property name="packagesToScan" value="com.accenture.fers.entity" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="showSql" value="true" />
+				<property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+	<bean class="org.springframework.orm.jpa.JpaTransactionManager"
+		id="transactionManager">
+		<property ref="entityManagerFactory" name="entityManagerFactory" />
+	</bean>
+
+	<bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/festivaldb2" />
+		<property name="username" value="root" />
+		<property name="password" value="abcd1234" />
+	</bean>
+	<!-- Fin configuracion JPA -->
+
 
 	<!-- Beans -->
 		<!-- Eventos -->
-	<bean id="event1" class="com.accenture.fers.entity.Event" >
+	<!-- <bean id="event1" class="com.accenture.fers.entity.Event" >
 		<property name="eventId" value="1" />
 		<property name="name" value="event 1" />
 		<property name="description" value="description 1" />
@@ -29,10 +62,10 @@
 		<property name="duration" value="duration 2" />
 		<property name="eventType" value="type 2" />
 		<property name="seatsAvailable" value="20" />
-	</bean>
+	</bean>-->
 		<!-- Fin Eventos -->
 		<!-- Visitors -->
-	<bean id="usuario" class="com.accenture.fers.entity.Visitor" >
+	<!-- <bean id="usuario" class="com.accenture.fers.entity.Visitor" >
 		<property name="visitorId" value="1" />
 		<property name="userName" value="Carlos" />
 		<property name="password" value="123456" />
@@ -42,7 +75,7 @@
 		<property name="dni" value="11.111.111-H" />
 		<property name="phoneNumber" value="1111111111" />
 		<property name="address" value="asdf" />
-	</bean>
+	</bean>-->
 		<!-- Fin Visitors -->
 	<!-- Fin Beans -->
 

@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.accenture.fers.entity.Visitor;
 import com.accenture.fers.exceptions.FERSGenericException;
-import com.accenture.fers.service.VisitorService;
+import com.accenture.fers.service.VisitorFacade;
 
 /**
 * Controlador que gestiona la actualizacion de detalles de usuario
@@ -26,7 +26,7 @@ import com.accenture.fers.service.VisitorService;
 @SessionAttributes("usuario")
 public class UpdateVisitorInformationController implements IController {
 	@Autowired
-	VisitorService visitorService;
+	VisitorFacade visitorService;
 
 	/**
 	 * Mantiene en updateVisitorInformation.jsp si hay error

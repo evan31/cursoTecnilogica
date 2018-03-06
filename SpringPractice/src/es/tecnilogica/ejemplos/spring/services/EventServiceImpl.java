@@ -6,17 +6,24 @@ import java.util.List;
 
 
 
+
+
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import es.tecnilogica.ejemplos.spring.daos.IEventDAO;
 import es.tecnilogica.ejemplos.spring.entities.Event;
 
-@Service
+@EnableTransactionManagement
+@Service("eventServiceImpl")
 public class EventServiceImpl implements EventFacade {
 	@Autowired
 	private IEventDAO eventDAO ;
 
+	@Transactional
     @Override
 	public List<Event> getAllEvents() {
 		return eventDAO.showAllEvents();

@@ -16,7 +16,7 @@ import com.accenture.fers.entity.Visitor;
 *
 * @version 1.0
 */
-@Repository("visitorDAO")
+//@Repository("visitorDAO")
 public class VisitorDAO implements IVisitorDAO{
 	@Autowired
 	private List<Visitor> visitors;
