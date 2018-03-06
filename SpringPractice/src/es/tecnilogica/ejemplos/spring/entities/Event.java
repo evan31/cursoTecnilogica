@@ -1,19 +1,45 @@
 package es.tecnilogica.ejemplos.spring.entities;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 
 
 /**
  * Entity class for Event
  */
-public class Event {
+@Table(name="events")
+@Entity
+public class Event{
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
 	private int eventid;
+
+	@Column(name="name")
 	private String name;
+
+	@Column(name="description")
 	private String description;
+
+	@Column(name="places")
 	private String place;
+
+	@Column(name="duration")
 	private String duration;
+
+	@Column(name="event_type")
 	private String eventType;
+
+	@Column(name="seats_available")
 	private int seatsAvailable;
 
 
