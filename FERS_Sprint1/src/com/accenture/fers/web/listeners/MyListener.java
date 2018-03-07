@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.accenture.fers.service.EventFacade;
-import com.accenture.fers.service.EventService;
 
 /**
  * Listener que carga los eventos en el contexto

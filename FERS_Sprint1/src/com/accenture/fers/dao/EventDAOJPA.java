@@ -11,11 +11,9 @@ import com.accenture.fers.entity.Event;
 
 /**
 *
-* EventDAO  Stub Implementation (only by testing)
-*
-* @author Accenture Technology Solutions
-*
-* @version 1.0
+* @author Carlos Gonzalez Gonzalez
+* @version 2.0
+* @since 06/03/2018
 */
 @Repository("eventDAO")
 public class EventDAOJPA implements IEventDAO{
@@ -26,9 +24,9 @@ public class EventDAOJPA implements IEventDAO{
 	public EventDAOJPA(){}
 
 	/**
-	 * This method returns a list of all the available events.
+	 * Devuelve todos los eventos
 	 *
-	 * @return A list of events
+	 * @return Lista de eventos
 	 */
 	@Override
 	public List<Event> showAllEvents() {
@@ -45,10 +43,10 @@ public class EventDAOJPA implements IEventDAO{
 	}
 
 	/**
-	 * This method returns an event, if it exists.
+	 * Devuelve un evento
 	 *
-	 * @param eventid: Identity of the required event
-	 * @return The Event object, if found
+	 * @param eventid Id del evento a buscar
+	 * @return Evento encontrado, null si no encuentra nada
 	 */
 	@Override
 	public Event getEvent(int eventid) {
@@ -65,8 +63,8 @@ public class EventDAOJPA implements IEventDAO{
 	}
 
 	/**
-	 * This method updates the Event
-	 * @param Identity of the changing event.
+	 * Actualiza un evento
+	 * @param event Evento a actualizar
 	 */
 	@Override
 	public void updateEvent(Event event) {

@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.accenture.fers.dao.EventDAO;
 import com.accenture.fers.dao.IEventDAO;
 import com.accenture.fers.entity.Event;
 

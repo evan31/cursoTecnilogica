@@ -11,11 +11,9 @@ import com.accenture.fers.entity.Visitor;
 
 /**
 *
-* VisitortDAO  Stub Implementation (only by testing)
-*
-* @author Accenture Technology Solutions
-*
-* @version 1.0
+* @author Carlos Gonzalez Gonzalez
+* @version 2.0
+* @since 06/03/2018
 */
 @Repository("visitorDAO")
 public class VisitorDAOJPA implements IVisitorDAO{
@@ -28,10 +26,10 @@ public class VisitorDAOJPA implements IVisitorDAO{
 	}
 
 	/**
-	 * This method adds a new visitor to database if it doesn't already exists
+	 * Añade un visitor
 	 *
-	 * @param Visitor to add
-	 * @return Boolean value to check if the operation was succeed
+	 * @param visitor Visitor a añadir
+	 * @return Boolean para saber si ha habido un problema
 	 */
 	@Override
 	public boolean insertData(Visitor visitor) {
@@ -48,10 +46,10 @@ public class VisitorDAOJPA implements IVisitorDAO{
 	}
 
 	/**
-	 * This method updates all the visitor data in the database
+	 * Actualiza un visitor
 	 *
-	 * @param Visitor object that has to be updated
-	 * @return Integer value to check if operation succeed
+	 * @param Visitor Visitor para actualizar
+	 * @return Numero para comprobar el exito de la actualizacion
 	 */
 	@Override
 	public int updateVisitor(Visitor visitor) {
@@ -69,11 +67,10 @@ public class VisitorDAOJPA implements IVisitorDAO{
 	}
 
 	/**
-	 * This method looks for a user in the database
+	 * Busca un visitor concreto
 	 *
-	 * @param User's name
-	 * @param User's password
-	 * @return Visitor object if it already exists, null value otherwise
+	 * @param visitor Visitor a buscar
+	 * @return Visitor encontrado
 	 */
 	@Override
 	public Visitor searchUser(Visitor visitor) {
@@ -85,17 +82,16 @@ public class VisitorDAOJPA implements IVisitorDAO{
 		try{
 			visitorFound = query.getSingleResult();
 		}catch(Exception e){
-
 		}
 
 		return visitorFound;
 	}
 
 	/**
-	 * This method registers a visitor to a specified event
+	 * Registra a un visitor en un evento
 	 *
-	 * @param Visitor that has to be registered to an event
-	 * @param Event to register
+	 * @param Visitor Visitor al que añadir el evento
+	 * @param Event Event a añadir
 	 */
 	@Override
 	public void registerVisitorToEvent(Visitor visitor, Event event) {
@@ -104,10 +100,10 @@ public class VisitorDAOJPA implements IVisitorDAO{
 	}
 
 	/**
-	 * This event removes a visitor's registered event from its collection
+	 * Quita un evento de un visitor
 	 *
-	 * @param Visitor that has to be unregistered to an event
-	 * @param Event to remove
+	 * @param visitor Visitor al que quitar el evento
+	 * @param event Event a quitar
 	 */
 	@Override
 	public void unregisterEvent(Visitor visitor, Event event) {
